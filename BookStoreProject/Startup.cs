@@ -97,6 +97,9 @@ namespace BookStoreProject
 
             app.UseHttpsRedirection();
 
+
+            app.UseAuthentication();
+
             app.UseRouting();
 
             app.UseAuthorization();
