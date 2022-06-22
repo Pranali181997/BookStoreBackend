@@ -7,52 +7,29 @@ using System.Text;
 
 namespace BusinessLayer.Services
 {
-  public class UserBL:IUserBL
+    public class AdressBL : IAdressBL
     {
-        IUserRL userRL;
-        public UserBL(IUserRL userRL)
+        IAdressRL adressRL;
+        public AdressBL(IAdressRL adressRL)
         {
-            this.userRL = userRL;
+            this.adressRL = adressRL;
         }
-        public UserModel UserRegistration(UserModel userModel)
+        public AdressModel AddAdress(AdressModel adressModel, int UserId)
         {
             try
             {
-                return this.userRL.UserRegistration(userModel);
+                return this.adressRL.AddAdress(adressModel,UserId);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        public LogInModel LogIn(string Email, string Password)
+        public string DeleteAdress(int AdressId, int UserId)
         {
             try
             {
-                return this.userRL.LogIn(Email, Password);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-        public bool ForgetPassword(ForgetPasswordModel forgetPassword)
-        {
-            try
-            {
-                return this.userRL.ForgetPassword(forgetPassword);
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-        public string ResetPassword(string Email, string Password, string newPassword)
-        {
-            try
-            {
-                return this.userRL.ResetPassword(Email, Password, newPassword);
+                return this.adressRL.DeleteAdress(AdressId, UserId);
             }
             catch (Exception ex)
             {
@@ -60,6 +37,29 @@ namespace BusinessLayer.Services
                 throw ex;
             }
         }
+        public List<AdressModel> GetAdressByUserId(int UserId)
+        {
+            try
+            {
+                return this.adressRL.GetAdressByUserId(UserId);
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
+        }
+        public AdressModel UpdateAddress(AdressModel adressModel, int UserId)
+        {
+            try
+            {
+                return this.adressRL.UpdateAddress(adressModel, UserId);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

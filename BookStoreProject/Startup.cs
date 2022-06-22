@@ -42,7 +42,14 @@ namespace BookStoreProject
             services.AddTransient<IUserRL, UserRL>();
             services.AddTransient<IBookBL, BookBL>();
             services.AddTransient<IBookRL, BookRL>();
-
+            services.AddTransient<ICartBL, CartBL>();
+            services.AddTransient<ICartRL, CartRL>();
+            services.AddTransient<IWishListBL, WIshListBL>();
+            services.AddTransient<IWishListRL, WishListRL>();
+            services.AddTransient<IAdminBL, AdminBL>();
+            services.AddTransient<IAdminRL, AdminRL>();
+            services.AddTransient<IAdressBL, AdressBL>();
+            services.AddTransient<IAdressRL, AdressRL>();
 
             services.AddAuthentication(x =>
             {

@@ -52,7 +52,6 @@ namespace RepositoryLayer.Services
                 throw ex;
             }
         }
-
         private object EncryptPassword(string password)
         {
             try
@@ -120,7 +119,7 @@ namespace RepositoryLayer.Services
                 {
                     new Claim("Email", Email),
                     new Claim("UserId",UserId.ToString()),
-                    //new Claim("UserName",)
+                    new Claim(ClaimTypes.Role,"User")
                 }),
                 Expires = DateTime.UtcNow.AddHours(24),
 
