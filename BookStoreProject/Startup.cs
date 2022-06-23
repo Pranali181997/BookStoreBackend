@@ -50,6 +50,11 @@ namespace BookStoreProject
             services.AddTransient<IAdminRL, AdminRL>();
             services.AddTransient<IAdressBL, AdressBL>();
             services.AddTransient<IAdressRL, AdressRL>();
+            services.AddTransient<IFeedBackBL,FeedBackBL>();
+            services.AddTransient<IFeedBackRL,FeedBackRL>();
+            services.AddTransient<IOrderBL,OrderBL>();
+            services.AddTransient<IOrderRL,OrderRL>();
+
 
             services.AddAuthentication(x =>
             {

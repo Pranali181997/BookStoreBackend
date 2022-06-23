@@ -30,7 +30,7 @@ namespace BookStoreProject.Controllers
                 }
                 else
                 {
-                    return this.BadRequest(new { success = false, message = "LogIn not Successfull", data = result });
+                    return this.BadRequest(new { success = false, message = "LogIn not Successfull"});
                 }
             }
             catch (Exception)
